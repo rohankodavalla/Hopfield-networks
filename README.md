@@ -60,12 +60,12 @@ Pattern Recognition with Hopfield Network:
 The project successfully demonstrates the design and performance evaluation of a Hopfield network for pattern recognition.
 
 - Key outcomes include:
-  ~Successful recall of clean patterns by the Hopfield network.
-  ~Evaluation of the network's robustness in recalling patterns with 25% noise.
-  ~Comparison of synchronous and asynchronous learning procedures.
-  ~Comments on the performance:
-  ~Analysis of whether all patterns could be recalled correctly under both clean and noisy conditions.
-  ~Observations on the differences in performance between synchronous and asynchronous learning procedures.
+  1. Successful recall of clean patterns by the Hopfield network.
+  2. Evaluation of the network's robustness in recalling patterns with 25% noise.
+  3. Comparison of synchronous and asynchronous learning procedures.
+  4. Comments on the performance:
+  5. Analysis of whether all patterns could be recalled correctly under both clean and noisy conditions.
+  6. Observations on the differences in performance between synchronous and asynchronous learning procedures.
 
 
 
