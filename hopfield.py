@@ -1,3 +1,11 @@
+'''
+numpy - Handling array operations and matrix calculations.Flattening and reshaping image vectors.Performing element-wise multiplications for the weight matrix.
+matplotlib.pyplot - Plotting images and visualizing the original, noisy, and recalled images.
+matplotlib.image - Reading images from files.
+Skimage - For preprocessing images, including converting to grayscale, resizing, and binarizing, to prepare them for the Hopfield network.
+'''
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.misc as sp
