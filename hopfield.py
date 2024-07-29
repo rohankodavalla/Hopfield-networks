@@ -8,6 +8,8 @@ from skimage.transform import resize
 from skimage.filters import threshold_mean
 
 
+"During training, we create a coefficient matrix that stores the patterns."
+"This matrix is updated using the outer product of the image vectors, following the Hebbian learning rule."
 
 def trainer(vector):
     vector = vector.flatten()
@@ -19,6 +21,9 @@ def trainer(vector):
                 coefMat[i][i-j] = vector[i]*vector[i-j]
     vector = np.reshape(vector, [int(np.sqrt(len(vector))),int(np.sqrt(len(vector)))])
     return coefMat
+
+"For recalling images, we introduce noise to the input and use the coefficient matrix to reconstruct the original image."
+"This is done by iteratively updating the states of neurons based on the weighted sum of inputs from other neurons."
 
 def prediction(curuptedVec,coefMat):
     curuptedVec = curuptedVec.flatten()
@@ -59,6 +64,9 @@ def reshape(data):
     return data
 '''
 
+"Finally, we visualize the results by plotting the original, noisy, and recalled images side by side."
+"This helps us see how well the network can recall the original images from corrupted inputs."
+
 def plot(data, test, predicted, figsize=(5, 6)):
     #data = [reshape(d) for d in data]
     #test = [reshape(d) for d in test]
@@ -82,6 +90,7 @@ def plot(data, test, predicted, figsize=(5, 6)):
     plt.savefig("/content/hopfieldNeuralNetwork/output.png")
     plt.show()
 
+
 def preprocessing(img, w=64, h=64):
     # Resize image
     img = resize(img, (w,h), mode='reflect')
@@ -103,6 +112,10 @@ def get_corrupted_input(input, corruption_level):
 
 #Import the image
 #image = img.imread('dataset/pgms/bird02.png','w').copy()
+
+
+'''We first preprocess the images by converting them to grayscale, resizing, and binarizing them. 
+This prepares the images for input into the Hopfield network.'''
 
 zero = rgb2gray(img.imread('/content/drive/MyDrive/ass 3 nn/0.png','w')).copy()
 one = rgb2gray(img.imread('/content/drive/MyDrive/ass 3 nn/1.png','w')).copy()
